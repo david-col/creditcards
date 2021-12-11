@@ -9,7 +9,7 @@ import Transaction from './components/Transaction.vue'
 import TransactionUpdate from './components/TransactionUpdate.vue'
 import About             from './components/About.vue'
 import AddCard                                        from './components/AddCard.vue'
-import CreditCards                                    from './components/CreditCards.vue'
+import CreditCard                                    from './components/CreditCard.vue'
 
 const routes = [{
   path: '/',
@@ -40,9 +40,9 @@ const routes = [{
   }
 },
 {
-  path: '/user/creditCards',
-  name: "creditCards",
-  component: CreditCards,
+  path: '/user/creditCard',
+  name: "creditCard",
+  component: CreditCard,
   meta      : {
     requiresAuth: true,
   }

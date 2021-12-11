@@ -12,6 +12,8 @@
         <a class="links_menu" href="#" v-if="!is_auth" v-on:click="loadLogIn">LogIn</a>
         <a class="links_menu" href="#" v-if="!is_auth" v-on:click="loadSignUp">SignUp</a>
         <a class="links_menu" href="#" v-if="is_auth" v-on:click="logOut">Logout</a>
+        <a class="links_menu" href="#" v-if="isAuth" v-on:click="loadAddCard">Add credit card</a>
+        <a class="links_menu" href="#" v-if="isAuth" v-on:click="loadCreditCards">credit cards</a>
         <a class="links_menu" href="#" v-if="!is_auth" v-on:click="loadAbout" >About</a>
         <a class="links_menu" href="#" v-if="is_auth" v-on:click="loadAbout" >About</a>
         
@@ -30,10 +32,6 @@
     <div class="footer">
            <div class="sharethis-inline-share-buttons"></div>
       <h2>PayMin - Misión TIC 2022</h2>
-      <nav>
-        <button v-if="isAuth" v-on:click="loadAddCard"> Agregar tarjeta de crédito </button>
-        <button v-if="isAuth" v-on:click="loadCreditCards"> tarjetas de crédito </button>
-      </nav>
     </div>
   </div>
 </template>
@@ -62,8 +60,8 @@ export default {
     loadAddCard: function(){
         this.$router.push({name: "addCard"});
     },
-    loadCreditCards: function(){
-        this.$router.push({name: "creditCards"});
+    loadCreditCard: function(){
+        this.$router.push({name: "creditCard"});
     },
     loadHome: function () {
       this.$router.push({ name: "home" });

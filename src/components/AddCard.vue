@@ -39,11 +39,12 @@
                 const regex = /^[a-zA-Z]+$/;
                 return regex.test(stringToValidate);
             },
-            processSignUp: async function(){
+            processAddCard: async function(){
                 await this.$apollo.mutate(
                     {
                         mutation: gql`
-                            mutation createCreditCard(creditCardInput: CreditCardInput): CreditCard
+                            mutation CreateCreditCard {
+                                createCreditCard
                             }
                         `,
                         variables:{
@@ -53,7 +54,7 @@
                 )
                 .then((result) => {
                     let dataAddCard = {
-                        name       : this.user.username,
+                        name       : this.credit_card.username,
                         number     : this.credit_card.number,
                         franchise  : this.credit_card.franchise,
                         bankname   : this.credit_card.bankname ,
